@@ -30,5 +30,5 @@ The model can be deploy in 2 ways.
 2. Deploy locally. The object detection model is trained using mxnet and some of the layers needs to be removed before entering deployment mode. See https://discuss.mxnet.io/t/deploy-sagemaker-trained-model-locally/1934 and https://github.com/zhreshold/mxnet-ssd#convert-model-to-deploy-mode for more details. 
 -Run <code>python streamer.py</code> to run main program.
 
-My model links (Processed and ready to deploy): https://drive.google.com/open?id=1zrKmQUDI7S0acSgavSw5BEs-62e3txt- 
+My model links (Processed and ready to deploy): https://drive.google.com/open?id=1nHDzkYPQ4Kfkwbv8RZ_Zz5_1IszOcQvp 
 Reference : https://docs.aws.amazon.com/sagemaker/latest/dg/object-detection-api-config.html

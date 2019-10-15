@@ -18,7 +18,7 @@ def handleBoundaries(val, maxval):
 
 ## Tracker and Sio initialization
 sio = socketio.Client()
-tracker = cv2.TrackerKCF_create()
+# tracker = cv2.TrackerKCF_create()
 
 @sio.on('response')
 def response(data):
@@ -26,8 +26,8 @@ def response(data):
     global resume
     resume = True
 
-sio.connect('http://192.168.1.131:7000')
-synset_path = 'C:/Users/HP/Desktop/classes.txt'
+# sio.connect('http://192.168.1.131:7000')
+synset_path = '/home/yinghuit/Documents/mxnet/classes.txt'
 with open(synset_path, 'r') as f:
     lines = f.readlines()
 classes = [l[:-1] for l in lines]
@@ -40,7 +40,7 @@ current_time = time.time()
 desire_output = ['knife', 'guns', 'scissors', 'other_weapon', 'metal_pipes', 'catridges', 'rifles', 'other']
 
 # **model shd be at deployment mode
-network_prefix = 'C:/Users/HP/Desktop/deploy_model_algo_1'
+network_prefix = '/home/yinghuit/Downloads/model5/deploy_model_algo_1'
 label_names = ['label']
 
 # Load the network parameters from default epoch 0
@@ -53,7 +53,7 @@ arg_params['prob_label'] = mx.nd.array([0])
 mod.set_params(arg_params, aux_params)
 Batch = namedtuple('Batch', ['data'])
 
-vid = cv2.VideoCapture('http://192.168.1.131:8080/?action=stream&ignored.mjpg')
+vid = cv2.VideoCapture('/home/yinghuit/Documents/Git/XrayUI/public/video.mp4')
 current_time = time.time()
 bbox = None
 
@@ -149,8 +149,8 @@ while True:
         if len(prob_list) > 0:
             bbox = min(prob_list, key=lambda x:x[1])[1:]
             #bbox = max(prob_list, key=lambda x:x[1])[1:]
-            tracker = cv2.TrackerKCF_create()
-            tracker.init(frame, bbox)
+            # tracker = cv2.TrackerKCF_create()
+            # tracker.init(frame, bbox)
 
         print('Results - {} '.format(datetime.datetime.now().strftime('%H:%M:%S')))
         print(predictions)
