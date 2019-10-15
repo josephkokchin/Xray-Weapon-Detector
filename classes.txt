@@ -1,0 +1,22 @@
+key
+other_electronic
+water_bottle
+handphone
+umbrella
+other
+knife
+powerbank
+laptop
+Personal Item
+other_weapon
+other_liquid
+scissors
+other_item
+Electronic
+guns
+Opaque
+Liquid
+metal_pipes
+catridges
+rifles
+bombs
